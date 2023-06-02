@@ -1,10 +1,10 @@
 .App {
   text-align: center;
-   width: 900px;
+  width: 900px;
 }
 body {
   max-width: 1000px;
-	margin: 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ body {
 
 /* Dark Mode Button*/
 
-body[theme=dark] {
+body[theme="dark"] {
   background: #000;
   color: #fff;
   border: solid 2px white;
@@ -39,13 +39,12 @@ body[theme=dark] {
 }
 
 #theme-toggle + label {
-  display: inline-block;
   cursor: pointer;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
- float: left;
+  float: left;
 }
 
 #theme-toggle:not(:checked) + label {
@@ -57,7 +56,7 @@ body[theme=dark] {
   box-shadow: inset -5px -5px 1px 1px #fff;
 }
 
-body[theme=dark] {
+body[theme="dark"] {
   .text-sun {
     color: #222;
   }
@@ -66,7 +65,7 @@ body[theme=dark] {
   }
 }
 
-body[theme=light] {
+body[theme="light"] {
   .text-sun {
     color: #000;
   }
@@ -75,3 +74,41 @@ body[theme=light] {
   }
 }
 
+/*First Container*/
+.first-container {
+  margin-top: 30px;
+}
+
+/*Search form*/
+.form-input {
+  width: 350px;
+  height: 30px;
+  border: none;
+  border-radius: 3em;
+  background-color: #ededed;
+   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+input::placeholder {
+  position: relative;
+  left: 15px;
+}
+
+.search-button {
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 3em;
+  background-color: #ededed;
+  margin-left: 20px;
+  border: 0 solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  color: #1a202c;
+}
+.search-button:hover {
+  width: 85px;
+  height: 35px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-weight: 620;
+}
