@@ -1,31 +1,33 @@
 .App {
   text-align: center;
+   width: 900px;
 }
 body {
-	margin: 0;
+  max-width: 1000px;
+	margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: background-color 1s;
-}
-
-/* Dark Mode Button*/
-body {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
   align-items: center;
-  height: 100vh;
   color: #000;
   user-select: none;
+  border: solid 2px black;
+  border-radius: 3em;
 }
+
+/* Dark Mode Button*/
 
 body[theme=dark] {
   background: #000;
   color: #fff;
+  border: solid 2px white;
 }
 
 #hybrid {
@@ -37,13 +39,13 @@ body[theme=dark] {
 }
 
 #theme-toggle + label {
-  content: '';
   display: inline-block;
   cursor: pointer;
-  height: 80px;
-  width: 80px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
+ float: left;
 }
 
 #theme-toggle:not(:checked) + label {
@@ -52,19 +54,7 @@ body[theme=dark] {
 
 #theme-toggle:checked + label {
   background-color: transparent;
-  box-shadow: inset -18px -16px 1px 1px #fff;
-}
-
-.intro-text {
-  top: 180px;
-  font-size: 1.6em;
-  font-family: monospace;
-}
-
-[class*=text-] {
-  font-size: 1.2em;
-  font-weight: 600;
-  transition: color 500ms ease-in;
+  box-shadow: inset -5px -5px 1px 1px #fff;
 }
 
 body[theme=dark] {
