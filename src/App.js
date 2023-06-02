@@ -6,9 +6,9 @@ export default function App() {
   return (
     <div className="App container">
       <div className="container first-container">
-        <div className="row">
+        <div className="row form-content">
           <ThemeToggle />
-          <div className="col-md-10">
+          <div className="col-sm-12 col-md-10 section-content-form">
             <form className="search-form">
               <input
                 className="form-input"
@@ -24,16 +24,16 @@ export default function App() {
         </div>
       </div>
 
-      <div className="first-section container">
+      <div className="content-section">
         <div className="row">
-          <div className="col-4 col-md-8">
-            <div className="row">
-              <div className="col-sm-12">Wind</div>
-              <div className="col-sm-12">Humidity</div>
-              <div className="col-sm-12">How are you</div>
+          <div className=" col-sm-12 col-md-4 col-lg-3">
+            <div className="row section-details-weather">
+              <div className="col-sm-12 details-weather">Wind</div>
+              <div className="col-sm-12 details-weather">Humidity</div>
+              <div className="col-sm-12 details-weather">How are you</div>
             </div>
           </div>
-          <div className="col-6 col-md-4">10 C</div>
+          <div className=" temperature-section col-sm-12 col-md-8 col-lg-9">10 C</div>
         </div>
       </div>
       <div className="container">

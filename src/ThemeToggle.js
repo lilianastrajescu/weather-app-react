@@ -9,7 +9,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="dark-mode-section col-md-2">
+    <div className="dark-mode-section col-sm-4">
       <input
         type="checkbox"
         id="theme-toggle"
