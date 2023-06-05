@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import ThemeToggle from "./ThemeToggle";
+import contrast from "./img/contrast.png"
 
 export default function App() {
   return (
@@ -33,14 +34,39 @@ export default function App() {
               <div className="col-sm-12 details-weather">How are you</div>
             </div>
           </div>
-          <div className=" temperature-section col-sm-12 col-md-8 col-lg-9">10 C</div>
+          <div className=" temperature-section col-sm-12 col-md-8 col-lg-9">
+            <img src={contrast} alt="sun" />
+            <p>10°C</p>
+          </div>
         </div>
       </div>
       <div className="container">
-        <div className="row">
-          <div className="col-sm-2">1 Sec</div>
-          <div className="col-sm-2">2 Sec</div>
-          <div className="col-sm-2">3 sec</div>
+        <div className="row days-container">
+          <div className="col-md-2 days-boxes">
+            <h6>Monday</h6>
+            <img src={contrast} alt="sun"></img>
+            <p>5 °</p>
+          </div>
+          <div className=" col-md-2 days-boxes">
+            <h6>Monday</h6>
+            <img src={contrast} alt="sun"></img>
+            <p>5 °</p>
+          </div>
+          <div className="col-md-2 days-boxes">
+            <h6>Monday</h6>
+            <img src={contrast} alt="sun"></img>
+            <p>5 °</p>
+          </div>
+          <div className="col-md-2 days-boxes">
+            <h6>Monday</h6>
+            <img src={contrast} alt="sun"></img>
+            <p>5 °</p>
+          </div>
+          <div className="col-md-2 days-boxes">
+            <h6>Monday</h6>
+            <img src={contrast} alt="sun"></img>
+            <p>5 °</p>
+          </div>
         </div>
       </div>
       <footer>
