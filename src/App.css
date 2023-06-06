@@ -117,7 +117,7 @@ input::placeholder {
 /*Second section*/
 .section-details-weather{
 text-align: left;
-background-color: #ededed;
+background-color: rgba(0, 0, 0, 0.06);
 padding: 20px;
 border-radius: 2em;
 display: flex;
@@ -144,7 +144,7 @@ height: 100px;
 .days-boxes{
   border: none;
   border-radius: 1.5em;
-  background-color: #ddd;
+  background-color: rgba(0, 0, 0, 0.06);
   display: flex;
  justify-content: center;
  flex-direction: column;

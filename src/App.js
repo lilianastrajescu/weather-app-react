@@ -71,7 +71,7 @@ export default function App() {
       </div>
       <footer>
         <a href="https://github.com/lilianastrajescu/weather-app-react">
-          Open source Code by Liliana Strajescu
+          Coded by Liliana Strajescu
         </a>
       </footer>
     </div>
