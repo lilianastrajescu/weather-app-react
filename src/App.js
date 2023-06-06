@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 import "./App.css";
 import ThemeToggle from "./ThemeToggle";
+import axios from "axios";
+
 import contrast from "./img/contrast.png"
 
 export default function App() {
+const [ready, setReady] = useState(false);
+const [temperature, setTemperature] = useState(null);
+
+function handleResponse(response){
+  console.log(response.data)
+  setTemperature(response.data.main.temp)
+  setReady(true)
+}
+
+if (ready){
   return (
     <div className="App container">
       <div className="container first-container">
@@ -36,7 +48,7 @@ export default function App() {
           </div>
           <div className=" temperature-section col-sm-12 col-md-8 col-lg-9">
             <img src={contrast} alt="sun" />
-            <p>10°C</p>
+            <p>{Math.round(temperature)}°C</p>
           </div>
         </div>
       </div>
@@ -76,4 +88,14 @@ export default function App() {
       </footer>
     </div>
   );
+} else {
+const apiKey = "d8875103aceb9bfca53f24861ccb50c4";
+let city = "London";
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+axios.get(apiUrl).then(handleResponse);
+
+return "Loading"
+}
+
 }
