@@ -139,7 +139,6 @@ input::placeholder {
   flex-direction: column;
 }
 .temperature-section {
-  font-size: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,6 +146,14 @@ input::placeholder {
 .temperature-section img {
   width: 100px;
   height: 100px;
+}
+
+.section-city-temperature{
+  margin-left: 40px;
+  display: flex;
+    font-size: 60px;
+    text-align: start;
+   margin-top: -30px;
 }
 
 /*Days Container*/
@@ -214,6 +221,8 @@ footer a:hover{
   }
   .temperature-section {
     margin-top: 10px;
+      display: flex;
+      flex-direction: column;
   }
   .days-container {
     display: flex;
@@ -221,6 +230,13 @@ footer a:hover{
     flex-direction: column;
     align-items: center;
     align-content: center;
+  }
+  .section-city-temperature{
+    display: flex;
+    margin-top: 0;
+    text-align: center;
+    font-size:40px ;
+    margin-left: 0;
   }
 }
 
