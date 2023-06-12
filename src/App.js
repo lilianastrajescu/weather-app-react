@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import ThemeToggle from "./ThemeToggle";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 
 
@@ -18,6 +19,7 @@ export default function App(props) {
        humidity: response.data.main.humidity,
        iconUrl: "",
        description: response.data.weather[0].description,
+       date: new Date (response.data.dt * 1000),
      });
    }
 
@@ -47,6 +49,9 @@ export default function App(props) {
            <div className="row">
              <div className=" col-sm-12 col-md-4 col-lg-3">
                <div className="row section-details-weather">
+                 <div className="col-sm-12 details-weather">
+                     <FormattedDate date={weatherData.date} />
+                 </div>
                  <div className="col-sm-12 details-weather">
                    Wind: {weatherData.wind} Km/h
                  </div>
