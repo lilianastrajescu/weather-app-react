@@ -146,10 +146,11 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 15px;
 }
 .temperature-section img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 
 .date{
@@ -164,6 +165,10 @@ input::placeholder {
     text-align: start;
    margin-top: -30px;
    font-weight:600;
+}
+.icon-weather{
+  width: 25px;
+  height: 30px;
 }
 
 /*Days Container*/
