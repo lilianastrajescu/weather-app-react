@@ -21,7 +21,7 @@ export default function WeatherTemperature(props) {
           {Math.round(props.celsius)}
           <div className="celsius-fahrenheit">
             {" "}
-            °C
+            °C |
             <a href="/" onClick={convertToFahrenheit}>
               °F{" "}
             </a>
@@ -33,7 +33,7 @@ export default function WeatherTemperature(props) {
     let fahrenheit = Math.round((props.celsius * 9) / 5) + 32;
     return (
       <div className="row section-city-temperature">
-        <div className="col-md-8 temperature">
+        <div className="temperature">
           {" "}
           {Math.round(fahrenheit)}
           <div className="celsius-fahrenheit">
@@ -41,7 +41,7 @@ export default function WeatherTemperature(props) {
               {" "}
               °C
             </a>
-            °F
+            | °F
           </div>
         </div>
       </div>
