@@ -38,8 +38,8 @@ export default function App(props) {
     return (
       <div className="App container">
         <div className="container first-container">
+          <ThemeToggle />
           <div className="row form-content">
-            <ThemeToggle />
             <div className="col-sm-12 col-md-10 section-content-form">
               <form className="search-form" onSubmit={handleSubmit}>
                 <input

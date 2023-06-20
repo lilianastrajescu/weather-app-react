@@ -7,9 +7,9 @@ import WeatherTemperature from "./WeatherTemperature";
 export default function WeatherInfo(props){
     return (
       <div>
-        <div className="content-section">
-          <div className="row">
-            <div className=" col-sm-12 col-md-4 col-lg-3">
+        <div>
+          <div className="row content-section">
+            <div className=" col-sm-8 col-md-8 col-lg-3 container-details">
               <div className="row section-details-weather">
                 <div className="col-sm-12 details-weather">
                   <FormattedDate date={props.data.date} />
@@ -20,18 +20,16 @@ export default function WeatherInfo(props){
                 <div className="col-sm-12 details-weather">
                   Humidity: {props.data.humidity}
                 </div>
-                <div className="col-sm-12 details-weather text-capitalize">
-                  {props.data.description}
-                </div>
               </div>
             </div>
             <div className=" row temperature-section">
-              <div className="col-md-8">
-                <span className="city-name col-md-8">{props.data.city}</span>
+              <div className="col-md-6 forecast-section">
+                <span className="city-name">{props.data.city}</span>
               </div>
-
-              <WeatherTemperature celsius={props.data.temperature} />
-              <WeatherIcons className="col-md-8" code={props.data.icon} />
+              <div className="temperature-icon-section">
+                <WeatherIcons className="col-md-8" code={props.data.icon} />
+                <WeatherTemperature celsius={props.data.temperature} />
+              </div>
             </div>
           </div>
         </div>

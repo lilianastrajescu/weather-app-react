@@ -9,10 +9,10 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="dark-mode-section col-md-2">
-      <label class="switch">
+    <div className="dark-mode-section">
+      <label className="switch">
         <input type="checkbox" checked={isChecked} onChange={handleToggle} />
-        <span class="slider"></span>
+        <span className="slider"></span>
       </label>
     </div>
   );
