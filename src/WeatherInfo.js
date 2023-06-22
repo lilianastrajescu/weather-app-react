@@ -23,10 +23,10 @@ export default function WeatherInfo(props){
               </div>
             </div>
             <div className=" row temperature-section">
-              <div className="col-md-6 forecast-section">
+              <div className="col-md-4 forecast-section">
                 <span className="city-name">{props.data.city}</span>
               </div>
-              <div className="temperature-icon-section">
+              <div className="col-md-8 temperature-icon-section">
                 <WeatherIcons className="col-md-8" code={props.data.icon} />
                 <WeatherTemperature celsius={props.data.temperature} />
               </div>
