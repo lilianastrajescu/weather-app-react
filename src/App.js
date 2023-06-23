@@ -7,6 +7,7 @@ import WeatherInfo from "./WeatherInfo";
 export default function App(props) {
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState(props.defaultCity);
+    const [isChecked, setIsChecked] = useState(false);
 
   function handleResponse(response) {
     setWeatherData({
@@ -38,7 +39,7 @@ export default function App(props) {
     return (
       <div className="App container">
         <div className="container first-container">
-          <ThemeToggle />
+          <ThemeToggle isChecked={isChecked} setIsChecked={setIsChecked} />
           <div className="row form-content">
             <div className="col-sm-12 col-md-10 section-content-form">
               <form className="search-form" onSubmit={handleSubmit}>
@@ -56,7 +57,7 @@ export default function App(props) {
             </div>
           </div>
         </div>
-        <WeatherInfo data={weatherData} />
+        <WeatherInfo data={weatherData} isChecked={isChecked} />
 
         <footer>
           <a href="https://github.com/lilianastrajescu/weather-app-react">

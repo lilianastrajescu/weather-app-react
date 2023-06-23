@@ -16,7 +16,8 @@ export default function WeatherInfo(props){
                   <FormattedDate date={props.data.date} />
                 </div>
                 <div className="col-sm-12 details-weather">
-                  <DarkModeIcon isDarkMode={props.isChecked} /> {props.data.wind} Km/h
+                  <DarkModeIcon isDarkMode={props.isChecked} />{" "}
+                  {props.data.wind} Km/h
                 </div>
                 <div className="col-sm-12 details-weather">
                   Humidity: {props.data.humidity}

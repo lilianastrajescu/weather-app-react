@@ -1,11 +1,11 @@
 import React from "react";
 import windy from "./icons-weather/windy.png";
-import windyDarkTheme from "./icons-weather/windy-dark-theme.png";
+import windyDark from "./icons-weather/windy-dark.png";
 
 const DarkModeIcon = ({ isDarkMode }) => {
   return (
     <img
-      src={isDarkMode ? windyDarkTheme : windy}
+      src={isDarkMode ? windyDark : windy}
       alt={isDarkMode ? "Dark Mode" : "Light Mode"}
     />
   );

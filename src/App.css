@@ -30,7 +30,7 @@ body {
 /* Dark Mode Button*/
 
 body[theme="dark"] {
-  background: #000f21;;
+  background: #000f21;
   color: #fff;
   border-color: var(--box-colors);
 }
