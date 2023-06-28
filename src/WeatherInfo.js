@@ -2,10 +2,23 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcons from "./WeatherIcons";
 import WeatherTemperature from "./WeatherTemperature";
-import DarkModeIcon from "./DarkModeIcon";
+
 
 
 export default function WeatherInfo(props){
+    const getDayOfWeek = (date) => {
+      const days = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+      const dayIndex = new Date(date).getDay();
+      return days[dayIndex];
+    };
     return (
       <div>
         <div>
@@ -16,8 +29,7 @@ export default function WeatherInfo(props){
                   <FormattedDate date={props.data.date} />
                 </div>
                 <div className="col-sm-12 details-weather">
-                  <DarkModeIcon isDarkMode={props.isChecked} />{" "}
-                  {props.data.wind} Km/h
+                  Wind: {props.data.wind} Km/h
                 </div>
                 <div className="col-sm-12 details-weather">
                   Humidity: {props.data.humidity}
@@ -37,46 +49,16 @@ export default function WeatherInfo(props){
         </div>
         <div className="container">
           <div className="row days-container">
-            <div className="col-md-2 days-boxes">
-              <h6>Monday</h6>
-              <WeatherIcons
-                code={props.data.icon}
-                alt={props.data.description}
-              />
-              <p>{Math.round(props.data.temperature)}°C</p>
-            </div>
-            <div className=" col-md-2 days-boxes">
-              <h6>Tuesday</h6>
-              <WeatherIcons
-                code={props.data.icon}
-                alt={props.data.description}
-              />
-              <p>{Math.round(props.data.temperature)}°C</p>
-            </div>
-            <div className="col-md-2 days-boxes">
-              <h6>Monday</h6>
-              <WeatherIcons
-                code={props.data.icon}
-                alt={props.data.description}
-              />
-              <p>{Math.round(props.data.temperature)}°C</p>
-            </div>
-            <div className="col-md-2 days-boxes">
-              <h6>Monday</h6>
-              <WeatherIcons
-                code={props.data.icon}
-                alt={props.data.description}
-              />
-              <p>{Math.round(props.data.temperature)}°C</p>
-            </div>
-            <div className="col-md-2 days-boxes">
-              <h6>Monday</h6>
-              <WeatherIcons
-                code={props.data.icon}
-                alt={props.data.description}
-              />
-              <p>{Math.round(props.data.temperature)}°C</p>
-            </div>
+            {props.forecastData.slice(0, 5).map((data, index) => (
+              <div className="col-md-2" key={index}>
+                <h6>{getDayOfWeek(data.dt_txt)}</h6>
+                <p>{data.main.temp}°C</p>
+                <img
+                  src={`./icons-weather/{data.weather[0].icon}.png`}
+                  alt={data.weather[0].description}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
