@@ -8,7 +8,7 @@
   
 }
 body {
-  max-width: 1100px;
+  max-width: 1050px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -145,7 +145,7 @@ input::placeholder {
 }
 .temperature-section {
   align-items: center;
-  margin-left: 130px;
+ margin-left: 50px;
   display: flex;
 }
 .temperature-icon-section img {
@@ -317,9 +317,12 @@ width: 300px;
   .content-section{
     display: flex;
     justify-content: center;
+        align-items: center;
+   
   }
   .temperature-section{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-left: 80px;
     margin-top: 30px;

@@ -48,8 +48,8 @@ export default function App(props) {
         <div className="App container">
           <div className="container first-container">
             <ThemeToggle isChecked={isChecked} setIsChecked={setIsChecked} />
-            <div className="row form-content">
-              <div className="col-sm-12 col-md-10 section-content-form">
+            <div className="form-content">
+              <div className="section-content-form">
                 <form className="search-form" onSubmit={handleSubmit}>
                   <input
                     className="form-input"
