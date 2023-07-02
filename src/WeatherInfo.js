@@ -8,19 +8,26 @@ import WeatherTemperature from "./WeatherTemperature";
 export default function WeatherInfo(props){
     const getDayOfWeek = (date) => {
       const days = [
+        "Sunday",
         "Monday",
         "Tuesday",
         "Wednesday",
         "Thursday",
         "Friday",
         "Saturday",
-        "Sunday",
       ];
       const dayIndex = new Date(date).getDay();
       return days[dayIndex];
-
-      
     };
+
+     const today = new Date().setHours(0, 0, 0, 0); // Get the current date (without time)
+     const filteredForecastData = props.forecastData.filter((data) => {
+       const forecastDate = new Date(data.dt_txt).setHours(0, 0, 0, 0); // Get the date of the forecast entry (without time)
+       return forecastDate !== today && data.dt_txt.includes("12:00"); // Exclude the current date and only include entries for 12:00 PM
+     });
+
+      const sixDayForecastData = filteredForecastData.slice(0, 7);
+
     return (
       <div>
         <div className="row content-section">
@@ -50,17 +57,14 @@ export default function WeatherInfo(props){
 
         <div className="container">
           <div className="row days-container">
-            {props.forecastData.slice(0, 6).map((data, index) => {
-              console.log(data.dt);
+            {sixDayForecastData.map((data, index) => {
               const iconCode = data.weather[0].icon;
-              const iconSrc = `./icons-weather/${iconCode}.png`;
               return (
-                <div className="col-md-2" key={index}>
+                <div className="col-md-2 days-boxes" key={index}>
                   <h6>{getDayOfWeek(data.dt_txt.split(" ")[0])}</h6>
-                  <p>{data.main.temp}°C</p>
-                  <img src={iconSrc} alt={data.weather[0].description} />
+                  <p>{Math.round(data.main.temp)}°C</p>
+                  <WeatherIcons code={iconCode} />
                 </div>
-                
               );
             })}
           </div>

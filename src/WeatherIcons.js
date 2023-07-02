@@ -39,5 +39,5 @@ export default function WeatherIcons(props){
     "50d": icon50d,
     "50n": icon50n,
   };
-  return <img src={iconMap[props.code]} alt="hi" />;
+  return <img src={iconMap[props.code]} alt="/" />;
 };
