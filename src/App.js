@@ -4,7 +4,6 @@ import ThemeToggle from "./ThemeToggle";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 
-
 export default function App(props) {
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState(props.defaultCity);
@@ -28,10 +27,10 @@ export default function App(props) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
-     const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-     axios.get(forecastApiUrl).then((response) => {
-       setForecastData(response.data.list);
-     });
+    const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(forecastApiUrl).then((response) => {
+      setForecastData(response.data.list);
+    });
   }
   function handleSubmit(e) {
     e.preventDefault();
@@ -41,42 +40,39 @@ export default function App(props) {
     setCity(e.target.value);
   }
 
-  
-
-    if (weatherData.ready) {
-      return (
-        <div className="App container">
-          <div className="container first-container">
-            <ThemeToggle isChecked={isChecked} setIsChecked={setIsChecked} />
-            <div className="form-content">
-              <div className="section-content-form">
-                <form className="search-form" onSubmit={handleSubmit}>
-                  <input
-                    className="form-input"
-                    type="value"
-                    placeholder="Enter a City"
-                    aria-label="Search"
-                    onChange={handleCityChange}
-                  />
-                  <button className="search-button" type="search">
-                    Search
-                  </button>
-                </form>
-              </div>
+  if (weatherData.ready) {
+    return (
+      <div className="App container">
+        <div className="container first-container">
+          <ThemeToggle isChecked={isChecked} setIsChecked={setIsChecked} />
+          <div className="form-content">
+            <div className="section-content-form">
+              <form className="search-form" onSubmit={handleSubmit}>
+                <input
+                  className="form-input"
+                  type="value"
+                  placeholder="Enter a City"
+                  aria-label="Search"
+                  onChange={handleCityChange}
+                />
+                <button className="search-button" type="search">
+                  Search
+                </button>
+              </form>
             </div>
           </div>
-          <WeatherInfo data={weatherData} forecastData={forecastData} />
-
-          <footer>
-            <a href="https://github.com/lilianastrajescu/weather-app-react">
-              Coded by Liliana Strajescu
-            </a>
-          </footer>
         </div>
-      );
-    } else {
-      search();
-      return "Loading";
-    }
-  };
+        <WeatherInfo data={weatherData} forecastData={forecastData} />
 
+        <footer>
+          <a href="https://github.com/lilianastrajescu/weather-app-react">
+            Coded by Liliana Strajescu
+          </a>
+        </footer>
+      </div>
+    );
+  } else {
+    search();
+    return "Loading";
+  }
+}
