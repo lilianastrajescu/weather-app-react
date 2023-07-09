@@ -65,7 +65,11 @@ export default function App(props) {
         <WeatherInfo data={weatherData} forecastData={forecastData} />
 
         <footer>
-          <a href="https://github.com/lilianastrajescu/weather-app-react">
+          <a
+            href="https://github.com/lilianastrajescu/weather-app-react"
+            target="_blank"
+            rel="noreferrer"
+          >
             Coded by Liliana Strajescu
           </a>
         </footer>
