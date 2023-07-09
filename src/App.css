@@ -141,7 +141,7 @@ input::placeholder {
 }
 .temperature-section {
   align-items: center;
-  margin-left: 50px;
+  margin-left: 10px;
   display: flex;
 }
 .temperature-icon-section img {
