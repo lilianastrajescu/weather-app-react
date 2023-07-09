@@ -131,6 +131,10 @@ input::placeholder {
 }
 
 /*Second section*/
+.content-section{
+  justify-content: space-around;
+}
+
 .section-details-weather {
   text-align: left;
   background-color: var(--box-colors);
