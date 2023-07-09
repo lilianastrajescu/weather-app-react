@@ -24,7 +24,15 @@ export default function WeatherInfo(props) {
     return forecastDate !== today && data.dt_txt.includes("12:00"); // Exclude the current date and only include entries for 12:00 PM
   });
 
+   const todayForecastData = props.forecastData.find((data) => {
+     const forecastDate = new Date(data.dt_txt).setHours(0, 0, 0, 0);
+     return forecastDate === today;
+   });
+
   const sixDayForecastData = filteredForecastData.slice(0, 7);
+   const todayTemperature = todayForecastData
+     ? Math.round(todayForecastData.main.temp)
+     : null;
 
   return (
     <div>
@@ -48,7 +56,9 @@ export default function WeatherInfo(props) {
           </div>
           <div className="col-md-9 temperature-icon-section">
             <WeatherIcons className="col-md-8" code={props.data.icon} />
-            <WeatherTemperature celsius={props.data.temperature} />
+            {todayTemperature && (
+              <WeatherTemperature celsius={todayTemperature} />
+            )}
           </div>
         </div>
       </div>
